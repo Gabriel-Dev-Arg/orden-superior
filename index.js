@@ -8,7 +8,7 @@ console.log(numerosDuplicados); // [2, 4, 6, 8, 10]
 
 
 //creamos el arreglo
-const num = [25,35,45,55,65]
+const num = [25, 35, 45, 55, 65]
 
 //utilizamos el metodo .map , para crear otro arreglo y modificarlo , este no cambia el arreglo original .
 let multiplicarNum = num.map(num => num + 100);
@@ -32,25 +32,25 @@ const personas = [
     { nombre: 'Juan', edad: 25 },
     { nombre: 'María', edad: 30 },
     { nombre: 'Carlos', edad: 40 }
-    ];
+];
 
 
-    let encontrarEdad = personas.map (personas => personas.edad)
+let encontrarEdad = personas.map(personas => personas.edad)
 
-    console.log(encontrarEdad)
+console.log(encontrarEdad)
 
 
 
 //ejercicio 4
-    const numeros1 = [1, 2, 3];
-    const letras = ['a', 'b', 'c'];
-    
-    let combinaciones = numeros1.map((numero, index) => {
+const numeros1 = [1, 2, 3];
+const letras = ['a', 'b', 'c'];
+
+let combinaciones = numeros1.map((numero, index) => {
     return `${numero}${letras[index]}`;
-    });
-    
-    console.log(combinaciones); // ['1a', '2b', '3c']
-    
+});
+
+console.log(combinaciones); // ['1a', '2b', '3c']
+
 
 
 
@@ -82,8 +82,7 @@ let nombresConA = nombres.filter(nombre => nombre.toLowerCase().includes('a'));
 //Metodo Sort automaticamente ordena
 let alfaveticamente = nombresConA.sort()
 console.log(alfaveticamente)
-
-
+//ejercicio 7
 let libros = [
     { titulo: 'Harry Potter', paginas: 400 },
     { titulo: 'El Hobbit', paginas: 300 },
@@ -93,6 +92,37 @@ let libros = [
 let librosConMasDe300Paginas = libros.filter(libro => libro.paginas > 300);
 librosConMasDe300Paginas.sort((a, b) => b.paginas - a.paginas);
 console.log(librosConMasDe300Paginas)
+
+//ejercicio 8
+
+let productos2 = [
+    { nombre: 'Camisa', precio: 20, disponible: true },
+    { nombre: 'Pantalón', precio: 30, disponible: false },
+    { nombre: 'Zapatos', precio: 50, disponible: true }
+];
+
+// Filtrar los productos que estén disponibles
+let productosDisponibles = productos2.filter(producto2 => producto2.disponible);
+
+// Aplicar el descuento del 30% a los precios
+let productosConDescuento = productosDisponibles.map(producto2 => ({
+    nombre: producto2.nombre,
+    precio: producto2.precio * 0.7,
+    disponible: producto2.disponible
+}));
+
+// Ordenar los productos en orden alfabético descendente
+let productosOrdenados = productosConDescuento.sort((a, b) => {
+    if (a.nombre > b.nombre) {
+        return -1;
+    } else if (a.nombre < b.nombre) {
+        return 1;
+    } else {
+        return 0;
+    }
+});
+
+console.log(productosOrdenados);
 
 
 
